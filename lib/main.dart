@@ -3,11 +3,9 @@ import 'package:the_user_login/welcome.dart';
 import 'login_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 late Box box1;
-
-//init hive db and open the HIVE box
 void main()  async{
   await Hive.initFlutter();
-  box1 = await Hive.openBox('logindata');//init hive
+  box1 = await Hive.openBox('logindata');
   runApp(const MyApp());
 }
 
