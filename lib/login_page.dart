@@ -1,7 +1,6 @@
 // ignore_for_file: camel_case_types, avoid_print
 
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:the_user_login/registration.dart';
 import 'package:the_user_login/welcome.dart';
@@ -52,7 +51,6 @@ class _Login_PageState extends State<Login_Page> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +92,6 @@ class _Login_PageState extends State<Login_Page> {
                               borderRadius: BorderRadius.circular(10.0),
                               borderSide: const BorderSide(color: Colors.blue)),
                           isDense: true,
-                          // Added this
                           contentPadding:
                           const EdgeInsets.fromLTRB(10, 20, 10, 10),
                         ),
@@ -198,8 +195,6 @@ class _Login_PageState extends State<Login_Page> {
     http.Response response = await http.post(Uri.parse(regAPIUrl),body: maped);
 
     var data = jsonDecode(response.body);
-
-    //after successful login, save user data in hive DB.
     if(data['success']=='1'){
       if(isChecked){
         box1.put('email', email.value.text);
